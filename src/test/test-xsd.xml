@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<counter 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="xyz0 ../main/grammars/test.xsd"
+  xmlns="xyz0"
+  >
+  <item/>
+  error : no text allowed here
+  <item/>
+  <item/>
+</counter>

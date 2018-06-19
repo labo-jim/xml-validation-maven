@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<element name="counter" xmlns="http://relaxng.org/ns/structure/1.0">
+  <zeroOrMore>
+    <element name="item">
+      <empty/>
+    </element>
+  </zeroOrMore>
+</element>
