@@ -15,6 +15,7 @@
    limitations under the License.
 
 -->
+<?xml-model href="../main/grammars/test.iso.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <counter>
   <item/>
   error : no text allowed here
