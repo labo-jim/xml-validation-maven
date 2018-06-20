@@ -33,11 +33,6 @@
         <version>1.0.2-beta-1</version>
         <dependencies>
           <dependency>
-            <groupId>com.jimetevenard.xml</groupId>
-            <artifactId>foo-schematron-validator</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-          </dependency>
-          <dependency>
             <groupId>com.componentcorp.xml.validation</groupId>
             <artifactId>jxvc</artifactId>
             <version>0.9.3</version>
@@ -77,51 +72,13 @@
         </executions>
         <configuration>
           <validationSets>
-            <!--<validationSet>
-              <dir>src/test</dir>
-              <includes>
-                <include>test-xsd.xml</include>
-              </includes>
-              <validating>true</validating>
-            </validationSet>-->
             <validationSet>
-              <!-- 
-                Version de Matthieu
-                
-              -->
               <dir>src/test</dir>
               <includes>
-                <include>test-rnc.xml</include>
                 <include>test-rng.xml</include>
-                <include>test-sch.xml</include>
-                <!--<include>test-iso-sch.xml</include>-->
               </includes>
               <schemaLanguage>http://componentcorp.com/xml/ns/xml-model/1.0</schemaLanguage>
             </validationSet>
-            <validationSet>
-              <!--
-                Appel direct Schematron (ou autre, peu importe)
-                avec SchemaLangage
-               -->
-              <dir>src/test</dir>
-              <includes>
-                <include>test.xml</include>        
-              </includes>
-              <systemId>src/main/grammars/test.sch</systemId> 
-              <schemaLanguage>http://www.ascc.net/xml/schematron</schemaLanguage>
-            </validationSet>
-            <!--<validationSet>
-              <!-\-
-                  sans schemaLanguage, avec un langage autre que XSD
-                  
-                -\->
-              <dir>src/test</dir>
-              <includes>
-                <include>test.xml</include>        
-              </includes>
-              <systemId>src/main/grammars/test.rng</systemId> 
-              
-            </validationSet>-->
           </validationSets>
         </configuration>
       </plugin>
