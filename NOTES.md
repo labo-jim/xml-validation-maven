@@ -1,6 +1,17 @@
-## Problèmes liées aux grammaires "exotiques" (Schematron, NVDL)
+* Bug dit "des namespaces"
+* NoSchemaF
+
+## Schematron / NVDL
 
 ### Le problème 
+
+Le XML-Maven Plugin ne reconnait pas d'implémentations pour Schematron (ISO ou 1.5) ou NVDL.
+
+D'où un joli message :
+`No SchemaFactory that implements the schema language 
+specified by: {Le NameSpace} could be loaded`
+
+Jing les Valide mais n'est pas JAXP-compliant.
 
 L'API JAXP :
 
@@ -11,21 +22,11 @@ L'API JAXP :
     de SAX, startElement, endDocument, etc...
  
 
-Les deux implementations sont elles obligatoires ?  
-**Trouver une notice d'implementation claire**
-
-C'est quand même "relou" d'implémenter les deux, d'autant
-que l'esprit est très différent...
-
-L'implémentation "Skeleton" de Schematron se prête difficilement à
-une implem SAX-Style...
-
-De manière générale, l'API JAXP semble avoir été pensée
-pour les grammaires "classiques"
+l'API JAXP semble avoir été pensée
+pour les grammaires "classiques", c'est à dire
 
 * Constituées d'un ensemble de règles modélisables statiquement
 
-Schématron et NVDL ne sont pas des "grammaires" XML à proprement Parler
 
 Le xml-maven-plugin
 
@@ -46,7 +47,7 @@ partir du `Schema` obtenu.
 
 * Trouver pour Chaque grammaire un Parser qui implémente les deux méthode ?
 * Passer sur Un Plugin "Maison" ?
-  * Un plugin JING Stupide ?  
+  * Un plugin JING "Stupide" ?  
     Jing (en particulier la version "Made in ELS" se débrouille bien avec 
     RNG/RNC (bien sur), mais aussi Schematron (toutes versions) et NVDL
   * Récupérer les travaux de rosslamont sur le xml-mdel ?  
@@ -60,6 +61,8 @@ partir du `Schema` obtenu.
   * 
 
 ## Bug dit "des namespaces / attributs xmlns"
+
+https://github.com/mojohaus/xml-maven-plugin/issues/21#issuecomment-379674586
 
 *TODO : à tester avec la nouvelle version de Jing*
 
